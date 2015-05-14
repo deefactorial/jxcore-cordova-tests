@@ -60,6 +60,20 @@ cordova('asyncSeverStarted').registerAsync(function(message, callback){
 //    console.log('Example app listening at http://%s:%s', host, port);
 //
 //});
+//
+// Fails with Error:
+//
+//E/jxcore-log﹕ etag@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/etag/index.js:55:1
+//setHeader@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/send/index.js:739:15
+//SendStream.prototype.send@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/send/index.js:507:3
+//sendIndex/next/<@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/send/index.js:645:7
+//makeCallback/<@fs.js:84:12
+//fs.stat@fs.js:780:7
+//next@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/send/index.js:641:5
+//sendIndex@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/send/index.js:649:3
+//SendStream.prototype.pipe@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/send/index.js:475:5
+//serveStatic@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/node_modules/serve-static/index.js:111:5
+//handle@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/lib/router/layer.js
 
 // Hello World Static File Express Server with etag false
 var express = require('express');
