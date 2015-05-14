@@ -20,3 +20,11 @@ cordova plugin remove io.jxcore.node
 cordova plugin add jxcore-cordova/io.jxcore.node/
 cordova run android
 ```
+
+make changes to jxcore-cordova/io.jxcore.node/app/jxcore/
+
+```sh
+cordova plugin remove io.jxcore.node
+cordova plugin add jxcore-cordova/io.jxcore.node/
+cordova run android
+```
