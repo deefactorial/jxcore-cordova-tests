@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json')
     });
 
     grunt.registerTask('runNode', function () {
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         });
     });
 
-    // Run the server and watch for file changes
+    // Run the server
     grunt.registerTask('server', ['runNode']);
 
     // Default task(s).
