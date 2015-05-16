@@ -7,24 +7,19 @@ follow installation instructions at
 in project root
 
 ```sh
-cd jxcore-cordova/io.jxcore.node/app
+cd www
 mv jxcore jxcore_stash
 git clone https://github.com/deefactorial/jxcore-cordova-tests.git jxcore
 cd jxcore
-mv index.html ../../../../www
+mv index.html ../
 npm install
 grunt server
 google-chrome http://localhost:3030
-cd ../../../../
-cordova plugin remove io.jxcore.node
-cordova plugin add jxcore-cordova/io.jxcore.node/
 cordova run android
 ```
 
-make changes to jxcore-cordova/io.jxcore.node/app/jxcore/
+make changes to www/jxcore/app.js
 
 ```sh
-cordova plugin remove io.jxcore.node
-cordova plugin add jxcore-cordova/io.jxcore.node/
 cordova run android
 ```
