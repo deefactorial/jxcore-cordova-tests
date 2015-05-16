@@ -7,6 +7,16 @@ follow installation instructions at
 in project root
 
 ```sh
+cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
+vi config.xml
+```
+add this line after the plugin cordova-plugin-whitelist
+
+```xml
+<allow-navigation href="http://localhost:3030/*" />
+```
+
+```sh
 cd www
 mv jxcore jxcore_stash
 git clone https://github.com/deefactorial/jxcore-cordova-tests.git jxcore
