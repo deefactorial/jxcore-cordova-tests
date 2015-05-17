@@ -41,3 +41,5 @@ cordova run android
 
 if running cordova 5.0.0 check that your not affected by this error
 http://stackoverflow.com/questions/30048429/cordova-does-not-actually-install-app-on-android-device
+
+you may have to kill node processes after running grunt server. if you have a fix for that PR me please.
