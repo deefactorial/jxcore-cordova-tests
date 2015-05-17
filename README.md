@@ -31,7 +31,7 @@ cordova platform add android
 cordova run android
 ```
 
-make changes to www/jxcore/app.js
+make changes to www/jxcore/index.js
 
 ```sh
 cordova run android
