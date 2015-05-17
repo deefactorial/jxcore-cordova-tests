@@ -10,7 +10,7 @@ in project root
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 vi config.xml
 ```
-add this line after the plugin cordova-plugin-whitelist
+add this line in config.xml after the plugin cordova-plugin-whitelist
 
 ```xml
 <allow-navigation href="http://localhost:3030/*" />
