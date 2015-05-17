@@ -1,12 +1,11 @@
 # jxcore-cordova-tests
-Tests For jxcore-cordova
+tests for jxcore-cordova
 
-follow installation instructions at
+This is a test repo for the jxcore cordova project located here:
 [jxcore-cordova](https://github.com/jxcore/jxcore-cordova.git)
 
-in project root
-
 ```sh
+cordova create jxcore-cordova-tests-project android.jxcore.jxcorecordova.jxcorecordovatests jxcore-cordova-tests
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 vi config.xml
 ```
