@@ -33,20 +33,20 @@
 //
 //});
 
-//// Hello World Static File Express Server
-//var express = require('express');
-//var app = express();
-//
-//app.use(express.static('public'));
-//
-//var server = app.listen(3030, function () {
-//
-//    var host = server.address().address;
-//    var port = server.address().port;
-//
-//    console.log('Example app listening at http://%s:%s', host, port);
-//
-//});
+// Hello World Static File Express Server
+var express = require('express');
+var app = express();
+
+app.use(express.static('public'));
+
+var server = app.listen(3030, function () {
+
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('Example app listening at http://%s:%s', host, port);
+
+});
 
 // Fails with Error:
 //
@@ -63,19 +63,19 @@
 //handle@/data/data/com.openmoney.p2p/files/jxcore/node_modules/express/lib/router/layer.js
 
 
-
-// Hello World Static File Express Server with etag false
-var express = require('express');
-var app = express();
-var serveStatic = require('serve-static');
-
-app.use(serveStatic('public',{ etag: false }));
-
-var server = app.listen(3030, function () {
-
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
-
-});
+//// Work around issue
+//// Hello World Static File Express Server with etag false
+//var express = require('express');
+//var app = express();
+//var serveStatic = require('serve-static');
+//
+//app.use(serveStatic('public',{ etag: false }));
+//
+//var server = app.listen(3030, function () {
+//
+//    var host = server.address().address;
+//    var port = server.address().port;
+//
+//    console.log('Example app listening at http://%s:%s', host, port);
+//
+//});
