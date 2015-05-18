@@ -3,16 +3,20 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/deefactorial/jxcore-cordova-tests.git"
   },
-  "dependencies": {
-    "express": "^4.12.0",
-    "serve-static": "^1.9.1"
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "cd jxcore && npm install",
+    "postupdate": "cd jxcore && npm install"
   },
   "devDependencies": {
+    "chai": "^2.3.0",
     "grunt": "^0.4.5",
     "grunt-nodemon": "^0.4.0",
+    "mocha": "^2.2.5",
     "nodemon": "^0.7.10"
   },
   "engines": {

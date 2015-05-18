@@ -1,0 +1,9 @@
+{
+  "name": "jxcore-cordova-tests",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.12.3",
+    "serve-static": "^1.9.1",
+    "supertest": "^1.0.1"
+  }
+}

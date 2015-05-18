@@ -6,22 +6,10 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         "nodemon": {
             "dev": {
-                "script": "index.js"
+                "script": "jxcore/index.js"
             }
         }
     });
-
-    //grunt.registerTask('runNode', function () {
-    //    grunt.util.spawn({
-    //        cmd: 'node',
-    //        args: ['./node_modules/nodemon/nodemon.js', 'index.js'],
-    //        opts: {
-    //            stdio: 'inherit'
-    //        }
-    //    }, function () {
-    //        grunt.fail.fatal(new Error("nodemon quit"));
-    //    });
-    //});
 
     grunt.loadNpmTasks('grunt-nodemon');
 

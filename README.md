@@ -16,13 +16,10 @@ add this line in config.xml after the plugin cordova-plugin-whitelist
 ```
 
 ```sh
-git clone https://github.com/jxcore/jxcore-cordova
-cordova plugin add jxcore-cordova/io.jxcore.node/
+cordova plugin add https://github.com/jxcore/jxcore-cordova.git
+rm -Rf www
+git clone https://github.com/deefactorial/jxcore-cordova-tests.git www
 cd www
-mv jxcore jxcore_stash
-git clone https://github.com/deefactorial/jxcore-cordova-tests.git jxcore
-cd jxcore
-mv index.html ../
 npm install
 grunt server
 google-chrome http://localhost:3030
