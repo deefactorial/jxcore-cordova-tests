@@ -9,25 +9,32 @@ cordova create jxcore-cordova-tests-project android.jxcore.jxcorecordova.jxcorec
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 vi config.xml
 ```
-add this line in config.xml after the plugin cordova-plugin-whitelist
+add this line in `config.xml` after the plugin `cordova-plugin-whitelist`
 
 ```xml
 <allow-navigation href="http://localhost:3030/*" />
 ```
 
+running android tests
 ```sh
 cordova plugin add https://github.com/jxcore/jxcore-cordova.git
 rm -Rf www
 git clone https://github.com/deefactorial/jxcore-cordova-tests.git www
 cd www/jxcore
-npm install
-grunt server
-google-chrome http://localhost:3030
+npm install --production
 cordova platform add android
 cordova run android
 ```
 
-make changes to www/jxcore/index.js
+developing tests
+```bash
+cd www/jxcore
+npm install
+grunt server
+google-chrome http://localhost:3030
+```
+
+make changes to `www/jxcore/index.js`
 
 ```sh
 cordova run android

@@ -18,7 +18,7 @@ cordova('asyncSeverStarted').registerAsync(function(message, callback){
 
         var app = require("./cookie-parser.js");
 
-        callback("Pong:" + message);
+        callback( app );
 
     } else {
         callback("unknown message:" + message);
