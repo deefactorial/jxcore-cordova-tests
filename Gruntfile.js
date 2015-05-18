@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         nodemon: {
             dev: {
-                script: 'index.js',
+                script: 'cookie-parser.js',
                 options: {
                     args: ['dev'],
                     nodeArgs: ['--debug'],
@@ -18,8 +18,8 @@ module.exports = function(grunt) {
                     env: {
                         PORT: '8181'
                     },
-                    cwd: __dirname + "/jxcore",
-                    ignore: ['jxcore/node_modules/**'],
+                    cwd: __dirname,
+                    ignore: ['node_modules/**'],
                     ext: 'js',
                     watch: ['server'],
                     delay: 1000,

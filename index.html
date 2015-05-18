@@ -12,6 +12,9 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="jxcore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="node_modules/mocha/mocha.js"></script>
+    <script type="text/javascript" charset="utf-8" src="node_modules/chai/chai.js"></script>
 
 </head>
 <body>
@@ -24,6 +27,10 @@
 <p id='txt'>
     Hello World!!
 </p>
+
+<div id="mocha"><p><a href=".">Index</a></p></div>
+<div id="messages"></div>
+<div id="fixtures"></div>
 
 <script type="text/javascript" charset="utf-8">
 
@@ -69,13 +76,23 @@
             });
         });
 
+
+        mocha.setup('bdd');
+
         // calling a method from JXcore (app.js)
         jxcore('asyncSeverStarted').call('Hello', function(ret, err){
             console.log("asyncServerCallback:" + JSON.stringify([ret,err]));
             if(!err) {
-                window.location = 'http://localhost:3030';
+
+                $.get("http://localhost:3030", function(data){
+
+                });
             }
         });
+
+
+
+        mocha.run();
     }
 </script>
 
