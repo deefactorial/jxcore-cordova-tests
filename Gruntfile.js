@@ -4,9 +4,27 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        "nodemon": {
-            "dev": {
-                "script": "jxcore/index.js"
+        nodemon: {
+            dev: {
+                script: 'index.js',
+                options: {
+                    args: ['dev'],
+                    nodeArgs: ['--debug'],
+                    callback: function (nodemon) {
+                        nodemon.on('log', function (event) {
+                            console.log(event.colour);
+                        });
+                    },
+                    env: {
+                        PORT: '8181'
+                    },
+                    cwd: __dirname + "/jxcore",
+                    ignore: ['jxcore/node_modules/**'],
+                    ext: 'js',
+                    watch: ['server'],
+                    delay: 1000,
+                    legacyWatch: true
+                }
             }
         }
     });
