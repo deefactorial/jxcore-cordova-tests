@@ -12,11 +12,11 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="jxcore.js"></script>
-    <script type="text/javascript" charset="utf-8" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!--script type="text/javascript" charset="utf-8" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="node_modules/mocha/mocha.js"></script>
     <script type="text/javascript" charset="utf-8" src="node_modules/chai/chai.js"></script>
     <script type="text/javascript" charset="utf-8" src="node_modules/should/should.js"></script>
-    <script type="text/javascript" charset="utf-8" src="clientscripts/superagent,js"></script>
+    <script type="text/javascript" charset="utf-8" src="clientscripts/superagent,js"></script>-->
 
 </head>
 <body>
@@ -98,16 +98,16 @@
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
             if(!err) {
 
-                mocha.setup('bdd');
-
-                $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
-                    console.log( data ); // Data returned
-                    console.log( textStatus ); // Success
-                    console.log( jqxhr.status ); // 200
-                    console.log( "Load was performed." );
-
-                    mocha.run();
-                });
+//                mocha.setup('bdd');
+//
+//                $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
+//                    console.log( data ); // Data returned
+//                    console.log( textStatus ); // Success
+//                    console.log( jqxhr.status ); // 200
+//                    console.log( "Load was performed." );
+//
+//                    mocha.run();
+//                });
             }
         });
     }
