@@ -1,17 +1,16 @@
 console.log("basic test");
 
-//check if we are in browser
+var url, request, NODE, uri, should, assert;
+
+//check if we are in browser or webview
 if (typeof window == "undefined") {
-    console.log("we are not in the browser");
+  console.log("we are not in the browser");
+  url = require('url');
 
-  var should = require('should');
-  var assert = require('assert');
-  var url = require('url');
+  request = require('superagent');
 
-  var request = require('superagent');
-
-  var NODE = true;
-  var uri = 'http://localhost:5000';
+  NODE = true;
+  uri = 'http://localhost:5000';
   if (typeof window !== 'undefined') {
     NODE = false;
     uri = '//' + window.location.host;
@@ -23,12 +22,17 @@ if (typeof window == "undefined") {
   }
 
 }
-//console.log("uri:" + uri);
-//console.log("typeof request:" + typeof request);
 
-//check if we are in cordova
+//desktop
+if (cordova == "undefined" && window == "undefined") {
+    should = require('should');
+    assert = require('assert');
+}
+
+//check if we are in cordova (mobile)
 if(typeof cordova == "undefined") {
-    console.log("we are not in cordova");
+
+  console.log("we are not in cordova");
 
   describe('request', function () {
 
