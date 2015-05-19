@@ -15,6 +15,8 @@
     <script type="text/javascript" charset="utf-8" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="node_modules/mocha/mocha.js"></script>
     <script type="text/javascript" charset="utf-8" src="node_modules/chai/chai.js"></script>
+    <script type="text/javascript" charset="utf-8" src="node_modules/should/should.js"></script>
+    <script type="text/javascript" charset="utf-8" src="clientscripts/superagent,js"></script>
 
 </head>
 <body>
@@ -77,45 +79,36 @@
         });
 
 
-        mocha.setup('bdd');
+
+
+//        // calling a method from JXcore (app.js)
+//        jxcore('asyncSeverStarted').call('Hello', function(ret, err){
+//            console.log("asyncServerCallback:" + JSON.stringify([ret,err]));
+//            if(!err) {
+//
+//                $.get("http://localhost:3030", function(data){
+//                    console.log("result:" + data);
+//
+//
+//                });
+//            }
+//        });
 
         // calling a method from JXcore (app.js)
-        jxcore('asyncSeverStarted').call('Hello', function(ret, err){
-            console.log("asyncServerCallback:" + JSON.stringify([ret,err]));
+        jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
+            console.log("asyncServerCallback:" + JSON.stringify([response,err]));
             if(!err) {
 
-                $.get("http://localhost:3030", function(data){
-                    console.log("result:" + data);
+                mocha.setup('bdd');
 
+                $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
+                    console.log( data ); // Data returned
+                    console.log( textStatus ); // Success
+                    console.log( jqxhr.status ); // 200
+                    console.log( "Load was performed." );
 
+                    mocha.run();
                 });
-            }
-        });
-
-        // calling a method from JXcore (app.js)
-        jxcore('asyncSeverStarted').call('Hello cookie-parser', function(cookieparser, err){
-            console.log("asyncServerCallback:" + JSON.stringify([ret,err]));
-            if(!err) {
-
-                describe('request.agent(app)', function(){
-
-                    var agent = request.agent(cookieparser.app);
-
-                    it('should save cookies', function(done){
-                        agent
-                                .get('/')
-                                .expect('set-cookie', 'cookie=hey; Path=/', done);
-                    });
-
-                    it('should send cookies', function(done){
-                        agent
-                                .get('/return')
-                                .expect('hey', done);
-                    });
-                });
-
-                mocha.run();
-
             }
         });
 

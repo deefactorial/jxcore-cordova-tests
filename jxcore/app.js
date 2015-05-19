@@ -18,7 +18,13 @@ cordova('asyncSeverStarted').registerAsync(function(message, callback){
 
         var app = require("./cookie-parser.js");
 
-        callback( app );
+        callback("Pong:" + message);
+
+    } else if (message == "Hello basic") {
+
+        var app = require("./test/basic.js");
+
+        callback("Pong:" + message);
 
     } else {
         callback("unknown message:" + message);
