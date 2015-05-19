@@ -67,6 +67,8 @@
     }, 5);
 
     function jxcore_ready() {
+        console.log("hello jxcore_ready()");
+
         // calling a method from JXcore (app.js)
         jxcore('asyncPing').call('Hello', function(ret, err){
             // register getTime method from jxcore (app.js)

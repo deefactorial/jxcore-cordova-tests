@@ -1,3 +1,5 @@
+console.log("hello app.js");
+
 cordova('asyncSeverStarted').registerAsync(function(message, callback){
 
     console.log("asyncSeverStarted called:" + message);
