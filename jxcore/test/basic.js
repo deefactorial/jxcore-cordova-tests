@@ -1,6 +1,8 @@
+console.log("basic test");
 
 //check if we are in browser
 if (typeof window == "undefined") {
+    console.log("we are not in the browser");
 
   var should = require('should');
   var assert = require('assert');
@@ -26,6 +28,7 @@ if (typeof window == "undefined") {
 
 //check if we are in cordova
 if(typeof cordova == "undefined") {
+    console.log("we are not in cordova");
 
   describe('request', function () {
 
