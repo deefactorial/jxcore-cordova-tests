@@ -42,7 +42,7 @@ if(typeof describe !== "undefined") {
 
         describe('with a callback', function () {
             it('should invoke .end()', function (done) {
-                this.timeout(2500); //times out on 2000
+                //this.timeout(2500); //times out on 2000
 
                 request
                     .get(uri + '/login', function (err, res) {

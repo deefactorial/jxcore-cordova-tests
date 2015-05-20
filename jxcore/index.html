@@ -121,15 +121,17 @@
 
         testfiles.forEach(function(file) {
 
+            console.log("Loading tests for file:" + file);
+
             var synchronousLock = true;
 
-            jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
+            jxcore('asyncSeverStarted').call(file, function(response, err){
                 console.log("asyncServerCallback:" + JSON.stringify([response,err]));
                 if(!err) {
 
-                    mocha.setup({ui:'bdd',timeout:2500});
+                    mocha.setup({ui:'bdd',timeout:3000});
 
-                    loadScript( "./test/basic.js", function( ) {
+                    loadScript( file, function( ) {
 
                         console.log( "Load was performed, running mocha tests..." );
 
@@ -145,9 +147,10 @@
             });
 
             while(synchronousLock){
-                setTimout(function(){},250);
+                setTimout(function(){},500);
             }
 
+            console.log("finished tests for file:" + file);
         });
     }
 </script>
