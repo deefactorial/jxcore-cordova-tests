@@ -31,21 +31,20 @@ if (typeof cordova == "undefined" && typeof window == "undefined") {
     assert = require('assert');
 }
 
-console.log("uri:" + uri);
+//console.log("uri:" + uri);
 
 //test if we are using mocha
 if(typeof describe != "undefined") {
     console.log("run mocha tests!");
 
-    if (typeof window.request != "undefined"){
-        var request = window.request;
-    }
-    console.log("typeof request:" + typeof request);
+    //console.log("typeof request:" + typeof request);
 
     describe('request', function () {
 
         describe('with a callback', function () {
             it('should invoke .end()', function (done) {
+                this.timeout(2500); //times out on 2000
+
                 request
                     .get(uri + '/login', function (err, res) {
                         console.log("result" + JSON.stringify([err,res]));
@@ -53,7 +52,7 @@ if(typeof describe != "undefined") {
                         done();
                     })
             })
-        })
+        });
 
         describe('.end()', function () {
             it('should issue a request', function (done) {
