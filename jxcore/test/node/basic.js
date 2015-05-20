@@ -30,41 +30,41 @@ if(typeof describe !== "undefined") {
 
 
     //on Cordova this fails with: result[{"crossDomain":true},null]
-    //describe('with an object', function () {
-    //  it('should format the url', function (done) {
-    //      console.log("uri" + JSON.stringify(url.parse('http://localhost:5000/login') ));
-    //    request
-    //        .get(url.parse('http://localhost:5000/login'))
-    //        .end(function (err, res) {
-    //            console.log("result" + JSON.stringify([err,res]));
-    //          assert(res.ok);
-    //          done();
-    //        })
-    //  })
-    //});
+    describe('with an object', function () {
+      it('should format the url', function (done) {
+          //console.log("uri" + JSON.stringify(url.parse('http://localhost:5000/login') ));
+        request
+            .get(url.parse('http://localhost:5000/login'))
+            .end(function (err, res) {
+                //console.log("result" + JSON.stringify([err,res]));
+              assert(res.ok);
+              done();
+            })
+      })
+    });
 
     //on Cordova this fails, plugin-cordova-whitelist may filter response
-    //describe('without a schema', function () {
-    //  it('should default to http', function (done) {
-    //    request
-    //        .get('localhost:5000/login')
-    //        .end(function (err, res) {
-    //          assert(res.status == 200);
-    //          done();
-    //        })
-    //  })
-    //});
+    describe('without a schema', function () {
+      it('should default to http', function (done) {
+        request
+            .get('localhost:5000/login')
+            .end(function (err, res) {
+              assert(res.status == 200);
+              done();
+            })
+      })
+    });
 
     describe('req.toJSON()', function () {
       it('should describe the request', function (done) {
         request
-            .post('http://localhost:5000/echo')
+            .post(':5000/echo')
             .send({foo: 'baz'})
             .end(function (err, res) {
-              console.log("result:" + JSON.stringify([err,res]))
+              //console.log("result:" + JSON.stringify([err,res]))
               var obj = res.request.toJSON();
               assert('POST' == obj.method);
-              assert('http://localhost:5000/echo' == obj.url);
+              assert(':5000/echo' == obj.url);
               assert('baz' == obj.data.foo);
               done();
             });
