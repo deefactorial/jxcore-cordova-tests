@@ -123,7 +123,7 @@
         console.log("typeof request:" + typeof request);
         console.log("typeof describe:" + typeof describe);
 
-        var testfiles = ["./test/basic.js", "./test/node/agency.js"];
+        var testfiles = ["./test/basic.js", "./test/node/basic.js"];
         testfiles.forEach(function(file) {
             console.log("Loading tests for file:" + file);
 
@@ -132,7 +132,7 @@
                 if(!err) {
                     loadScript( file, function( ) {
                         console.log( "Test Loaded for file:" + file );
-                        
+
                     });
                 }
             });
