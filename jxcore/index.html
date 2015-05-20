@@ -116,11 +116,13 @@
 
         window.request = window.superagent;
 
-                                console.log("typeof request:" + typeof request);
-
-                        console.log("typeof describe:" + typeof describe);
-
         mocha.setup({ui:'bdd',timeout:3000});
+
+        console.log("typeof assert:" + typeof assert);
+
+        console.log("typeof request:" + typeof request);
+
+        console.log("typeof describe:" + typeof describe);
 
         var testfiles = ["./test/basic.js", "./test/node/agency.js"];
 
@@ -136,9 +138,7 @@
 
                     loadScript( file, function( ) {
 
-                        console.log( "Load was performed, running mocha tests..." );
-
-
+                        console.log( "Test Loaded for file:" + file );
 
                         synchronousLock - false;
                     });
@@ -152,7 +152,7 @@
             console.log("finished tests for file:" + file);
         });
 
-        console.log("finished loading all servers and tests");
+        console.log("finished loading all servers and tests, brewing mocha...");
 
         mocha.run();
     }
