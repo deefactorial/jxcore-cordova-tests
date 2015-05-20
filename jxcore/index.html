@@ -101,7 +101,8 @@
             if(!err) {
 
                 var request = window.superagent;
-                mocha.setup('bdd');
+
+
 
                 $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
 //                    console.log( data ); // Data returned
@@ -113,6 +114,7 @@
 
                     console.log("typeof describe:" + typeof describe);
 
+                    mocha.setup('bdd');
                     mocha.run();
                 });
 
