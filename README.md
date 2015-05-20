@@ -44,3 +44,7 @@ cordova run android
 
 if running cordova 5.0.0 check that your not affected by this error
 http://stackoverflow.com/questions/30048429/cordova-does-not-actually-install-app-on-android-device
+
+#Contributions
+
+Tests from the [superagent](https://github.com/visionmedia/superagent) project have been incorporated into this project.
