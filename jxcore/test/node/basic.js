@@ -33,6 +33,7 @@ if(typeof describe !== "undefined") {
         request
             .get(url.parse('http://localhost:5000/login'))
             .end(function (err, res) {
+                console.log("result" + JSON.stringify([err,res]));
               assert(res.ok);
               done();
             })
