@@ -58,12 +58,12 @@ if(typeof describe !== "undefined") {
     describe('req.toJSON()', function () {
       it('should describe the request', function (done) {
         request
-            .post(':5000/echo')
+            .post('http://localhost:5000/echo')
             .send({foo: 'baz'})
             .end(function (err, res) {
               var obj = res.request.toJSON();
               assert('POST' == obj.method);
-              assert(':5000/echo' == obj.url);
+              assert('http://localhost:5000/echo' == obj.url);
               assert('baz' == obj.data.foo);
               done();
             });
