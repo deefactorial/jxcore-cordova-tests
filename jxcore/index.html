@@ -99,6 +99,7 @@
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
             if(!err) {
 
+                var request = require("superagent");
                 mocha.setup('bdd');
 
                 $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
