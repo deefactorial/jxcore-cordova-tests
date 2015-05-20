@@ -31,7 +31,7 @@
     Hello World!!
 </p>
 
-<div id="mocha"><p><a href=".">Index</a></p></div>
+<div id="mocha"></div>
 <div id="messages"></div>
 <div id="fixtures"></div>
 
@@ -105,7 +105,9 @@
 //                    console.log( data ); // Data returned
 //                    console.log( textStatus ); // Success
 //                    console.log( jqxhr.status ); // 200
-                    console.log( "Load was performed." );
+                    console.log( "Load was performed, running mocha tests..." );
+
+                    console.log("typeof request:" + typeof request);
 
                     mocha.run();
                 });
