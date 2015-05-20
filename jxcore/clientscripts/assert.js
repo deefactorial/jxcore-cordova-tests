@@ -1,2 +1,1 @@
-var assert = require("assert");
-module.exports = assert;
+module.exports = require("assert");
