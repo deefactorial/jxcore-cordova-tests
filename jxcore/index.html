@@ -123,8 +123,10 @@
         console.log("typeof request:" + typeof request);
         console.log("typeof describe:" + typeof describe);
 
-        var testfiles = ["./test/basic.js", "./test/node/basic.js"];
-        testfiles.forEach(function(file) {
+        //key filename, value isComplete
+        var testfiles = { "./test/basic.js" : false, "./test/node/basic.js": false };
+
+        for(var file in testfiles) {
             console.log("Loading tests for file:" + file);
 
             jxcore('asyncSeverStarted').call(file, function(response, err){
@@ -132,13 +134,28 @@
                 if(!err) {
                     loadScript( file, function( ) {
                         console.log( "Test Loaded for file:" + file );
-
+                        testfiles[file] = true;
                     });
                 }
             });
 
             console.log("finished tests for file:" + file);
-        });
+        }
+
+        function testComplete(){
+            var complete = true;
+            for(var file in testfiles) {
+                //check if there is a false
+                if(!testfiles[file]){
+                    complete = false;
+                }
+            }
+            if(!complete) {
+                setTimeout(function(){testComplete()},100);
+            }
+        }
+        testComplete();
+
         console.log("finished loading all servers and tests, brewing mocha...");
 
         mocha.run();

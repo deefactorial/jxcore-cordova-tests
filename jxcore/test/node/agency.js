@@ -60,7 +60,7 @@ if (typeof window === "undefined") {
 
 } else {
   console.log("we are in webview or browser");
-
+  //browser test reveals has no method 'agent' at file:///android_asset/www/jxcore/test/node/agency.js:79
 }
 
 //desktop
