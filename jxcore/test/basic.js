@@ -16,7 +16,7 @@ if (typeof window == "undefined") {
     uri = '//' + window.location.host;
   }
   else {
-    process.env.ZUUL_PORT = 5000;
+    process.env.ZUUL_PORT = 3030;
     require('./support/server.js');
     uri = 'http://localhost:5000';
   }
