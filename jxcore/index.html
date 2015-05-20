@@ -116,6 +116,10 @@
 
         window.request = window.superagent;
 
+                                console.log("typeof request:" + typeof request);
+
+                        console.log("typeof describe:" + typeof describe);
+
         mocha.setup({ui:'bdd',timeout:3000});
 
         var testfiles = ["./test/basic.js", "./test/node/agency.js"];
@@ -134,9 +138,7 @@
 
                         console.log( "Load was performed, running mocha tests..." );
 
-                        console.log("typeof request:" + typeof request);
 
-                        console.log("typeof describe:" + typeof describe);
 
                         synchronousLock - false;
                     });
@@ -144,7 +146,7 @@
             });
 
             while(synchronousLock){
-                setTimout(function(){},500);
+                setTimeout(function(){},500);
             }
 
             console.log("finished tests for file:" + file);
