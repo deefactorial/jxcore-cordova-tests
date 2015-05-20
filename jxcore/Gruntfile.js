@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         nodemon: {
             dev: {
-                script: 'cookie-parser.js',
+                script: 'test/support/server.js',
                 options: {
                     args: ['dev'],
                     nodeArgs: ['--debug'],
