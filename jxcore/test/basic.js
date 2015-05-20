@@ -21,8 +21,8 @@ if (typeof window === "undefined") {
 } else {
 
     NODE = false;
-    uri = '//' + window.location.host;
-
+    //uri = '//' + window.location.host;
+    uri = 'http://localhost:3030';
 }
 
 //desktop
