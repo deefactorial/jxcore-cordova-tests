@@ -4,14 +4,13 @@ var url, NODE, uri, should, assert;
 
 //check if we are in browser or webview
 if (typeof window === "undefined") {
-  console.log("we are not in the browser");
-  url = require('url');
+    console.log("we are not in the browser");
+    url = require('url'); //is this necessary ?
 
-  var request = require('superagent');
+    var request = require('superagent');
 
-  NODE = true;
-  uri = 'http://localhost:3030';
-
+    NODE = true;
+    uri = 'http://localhost:3030';
 
     process.env.ZUUL_PORT = 3030;
     require('./support/server.js');
@@ -47,8 +46,6 @@ if(typeof describe != "undefined") {
 
         describe('with a callback', function () {
             it('should invoke .end()', function (done) {
-                $.get(uri + '/login', function (data){console.log("data:" + JSON.stringifY(data))});
-
                 request
                     .get(uri + '/login', function (err, res) {
                         console.log("result" + JSON.stringify([err,res]));

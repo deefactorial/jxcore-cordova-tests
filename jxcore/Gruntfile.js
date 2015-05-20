@@ -26,13 +26,22 @@ module.exports = function(grunt) {
                     legacyWatch: true
                 }
             }
+        },
+        browserify: {
+            dist: {
+                files: {
+                    'dist/bundle.js': ['clientscripts/**/*.js']
+                }
+            }
         }
     });
+
+    grunt.loadNpmTasks('grunt-browserify');
 
     grunt.loadNpmTasks('grunt-nodemon');
 
     // Run the server
-    grunt.registerTask('server', ['nodemon']);
+    grunt.registerTask('server', ['browserify','nodemon']);
 
     // Default task(s).
     grunt.registerTask('default', ['server']);
