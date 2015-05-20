@@ -2,7 +2,7 @@ console.log("basic test");
 
 var url, NODE, uri, should, assert;
 
-//check if we are in browser or webview
+//check if we are not in browser or webview
 if (typeof window === "undefined") {
     console.log("we are not in the browser");
     url = require('url'); //is this necessary ?
@@ -16,16 +16,15 @@ if (typeof window === "undefined") {
     require('./support/server.js');
     uri = 'http://localhost:3030';
 
-
 } else {
-
+    //we are in webview or browser
     NODE = false;
     //uri = '//' + window.location.host;
     uri = 'http://localhost:3030';
 }
 
 //desktop
-if (typeof cordova == "undefined" && typeof window == "undefined") {
+if (typeof cordova === "undefined" && typeof window === "undefined") {
     console.log("we are in the desktop");
     should = require('should');
     assert = require('assert');
@@ -34,7 +33,7 @@ if (typeof cordova == "undefined" && typeof window == "undefined") {
 //console.log("uri:" + uri);
 
 //test if we are using mocha
-if(typeof describe != "undefined") {
+if(typeof describe !== "undefined") {
     console.log("run mocha tests!");
 
     //console.log("typeof request:" + typeof request);

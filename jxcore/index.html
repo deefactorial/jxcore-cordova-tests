@@ -116,25 +116,38 @@
 
         window.request = window.superagent;
 
-        jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
-            console.log("asyncServerCallback:" + JSON.stringify([response,err]));
-            if(!err) {
 
-                mocha.setup('bdd');
+        var testfiles = ["./test/basic.js", "./test/node/agency.js"];
 
-                loadScript( "./test/basic.js", function( ) {
+        testfiles.forEach(function(file) {
 
-                    console.log( "Load was performed, running mocha tests..." );
+            var synchronousLock = true;
 
-                    console.log("typeof request:" + typeof request);
+            jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
+                console.log("asyncServerCallback:" + JSON.stringify([response,err]));
+                if(!err) {
 
-                    console.log("typeof describe:" + typeof describe);
+                    mocha.setup({ui:'bdd',timeout:2500});
 
-                    mocha.run();
-                });
+                    loadScript( "./test/basic.js", function( ) {
 
+                        console.log( "Load was performed, running mocha tests..." );
 
+                        console.log("typeof request:" + typeof request);
+
+                        console.log("typeof describe:" + typeof describe);
+
+                        mocha.run();
+
+                        synchronousLock - false;
+                    });
+                }
+            });
+
+            while(synchronousLock){
+                setTimout(function(){},250);
             }
+
         });
     }
 </script>

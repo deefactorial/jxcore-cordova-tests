@@ -29,7 +29,10 @@ cordova('asyncSeverStarted').registerAsync(function(message, callback){
         callback("Pong:" + message);
 
     } else {
-        callback("unknown message:" + message);
+
+        var app = require(message);
+
+        callback("Pong:" + message);
     }
 
 });
