@@ -47,7 +47,7 @@ if(typeof describe != "undefined") {
             it('should invoke .end()', function (done) {
                 request
                     .get(uri + '/login', function (err, res) {
-                        console.log("result",[err,res]);
+                        console.log("result" + JSON.stringify([err,res]));
                         assert(res.status == 200);
                         done();
                     })
