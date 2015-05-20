@@ -37,6 +37,9 @@ if(typeof describe != "undefined") {
     console.log("run mocha tests!");
 
     console.log("typeof request:" + typeof request);
+    if (typeof window.request != "undefined"){
+        var request = window.request;
+    }
 
     describe('request', function () {
 
