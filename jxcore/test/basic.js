@@ -10,17 +10,17 @@ if (typeof window === "undefined") {
     var request = require('superagent');
 
     NODE = true;
-    uri = 'http://localhost:3030';
+    uri = 'http://localhost:5000';
 
-    process.env.ZUUL_PORT = 3030;
+    process.env.ZUUL_PORT = 5000;
     require('./support/server.js');
-    uri = 'http://localhost:3030';
+    uri = 'http://localhost:5000';
 
 } else {
     //we are in webview or browser
     NODE = false;
     //uri = '//' + window.location.host;
-    uri = 'http://localhost:3030';
+    uri = 'http://localhost:5000';
 }
 
 //desktop
