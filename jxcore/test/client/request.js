@@ -5,7 +5,7 @@ if (typeof window === "undefined") {
 
 if (typeof it !== 'undefined'){
 
-    var uri = "localhost:5000"
+    var uri = "localhost:5000";
 
   it('Request inheritance', function () {
     assert(request.get('/') instanceof request.Request);
@@ -17,7 +17,8 @@ if (typeof it !== 'undefined'){
   });
 
   it('request() simple GET', function (next) {
-    request('GET',uri + '/ok').end(function (err, res) {
+    request('GET','/ok').end(function (err, res) {
+        console.log("result" + JSON.stringify([err,res]));
       assert(res instanceof request.Response, 'respond with Response');
       assert(res.ok, 'response should be ok');
       assert(res.text, 'res.text');
