@@ -3,7 +3,7 @@ console.log("basic test");
 var url, NODE, uri, should, assert;
 
 //check if we are in browser or webview
-if (typeof window == "undefined") {
+if (typeof window === "undefined") {
   console.log("we are not in the browser");
   url = require('url');
 
@@ -11,15 +11,17 @@ if (typeof window == "undefined") {
 
   NODE = true;
   uri = 'http://localhost:3030';
-  if (typeof window !== 'undefined') {
-    NODE = false;
-    uri = '//' + window.location.host;
-  }
-  else {
+
+
     process.env.ZUUL_PORT = 3030;
     require('./support/server.js');
     uri = 'http://localhost:3030';
-  }
+
+
+} else {
+
+    NODE = false;
+    uri = '//' + window.location.host;
 
 }
 
