@@ -10,7 +10,7 @@ if (typeof window == "undefined") {
   var request = require('superagent');
 
   NODE = true;
-  uri = 'http://localhost:5000';
+  uri = 'http://localhost:3030';
   if (typeof window !== 'undefined') {
     NODE = false;
     uri = '//' + window.location.host;
@@ -18,7 +18,7 @@ if (typeof window == "undefined") {
   else {
     process.env.ZUUL_PORT = 3030;
     require('./support/server.js');
-    uri = 'http://localhost:5000';
+    uri = 'http://localhost:3030';
   }
 
 }
