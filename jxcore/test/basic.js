@@ -30,7 +30,7 @@ if (typeof cordova == "undefined" && typeof window == "undefined") {
     assert = require('assert');
 }
 
-
+console.log("uri:" + uri);
 
 //test if we are using mocha
 if(typeof describe != "undefined") {
