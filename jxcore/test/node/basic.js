@@ -30,6 +30,7 @@ if(typeof describe !== "undefined") {
 
     describe('with an object', function () {
       it('should format the url', function (done) {
+          console.log("uri", url.parse('http://localhost:5000/login'));
         request
             .get(url.parse('http://localhost:5000/login'))
             .end(function (err, res) {
