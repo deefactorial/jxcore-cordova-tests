@@ -56,7 +56,7 @@ if (typeof window === "undefined") {
     res.status(200).send('simple');
   });
 
-  app.listen(3030);
+  app.listen(4000);
 
 } else {
   console.log("we are in webview or browser");

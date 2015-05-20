@@ -116,6 +116,7 @@
 
         window.request = window.superagent;
 
+        mocha.setup({ui:'bdd',timeout:3000});
 
         var testfiles = ["./test/basic.js", "./test/node/agency.js"];
 
@@ -129,8 +130,6 @@
                 console.log("asyncServerCallback:" + JSON.stringify([response,err]));
                 if(!err) {
 
-                    mocha.setup({ui:'bdd',timeout:3000});
-
                     loadScript( file, function( ) {
 
                         console.log( "Load was performed, running mocha tests..." );
@@ -138,8 +137,6 @@
                         console.log("typeof request:" + typeof request);
 
                         console.log("typeof describe:" + typeof describe);
-
-                        mocha.run();
 
                         synchronousLock - false;
                     });
@@ -152,6 +149,10 @@
 
             console.log("finished tests for file:" + file);
         });
+
+        console.log("finished loading all servers and tests");
+
+        mocha.run();
     }
 </script>
 
