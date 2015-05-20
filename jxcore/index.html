@@ -114,6 +114,8 @@
 
         // calling a method from JXcore (app.js)
 
+        console.log("typeof assert" + typeof assert);
+
         window.request = window.superagent;
 
         jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
