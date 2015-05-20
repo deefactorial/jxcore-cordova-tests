@@ -3,7 +3,8 @@ if (typeof window === "undefined") {
   var request = require('superagent');
 }
 
-describe('client requests', function () {
+if (typeof it !== 'undefined'){
+
 
   it('Request inheritance', function () {
     assert(request.get('/') instanceof request.Request);
@@ -661,4 +662,4 @@ describe('client requests', function () {
     });
   }
 
-});
+}
