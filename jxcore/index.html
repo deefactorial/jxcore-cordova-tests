@@ -118,40 +118,29 @@
 
         mocha.setup({ui:'bdd',timeout:3000});
 
+        //check dependencies are functions
         console.log("typeof assert:" + typeof assert);
-
         console.log("typeof request:" + typeof request);
-
         console.log("typeof describe:" + typeof describe);
 
         var testfiles = ["./test/basic.js", "./test/node/agency.js"];
-
         testfiles.forEach(function(file) {
-
             console.log("Loading tests for file:" + file);
-
             var synchronousLock = true;
-
             jxcore('asyncSeverStarted').call(file, function(response, err){
                 console.log("asyncServerCallback:" + JSON.stringify([response,err]));
                 if(!err) {
-
                     loadScript( file, function( ) {
-
                         console.log( "Test Loaded for file:" + file );
-
-                        synchronousLock - false;
+                        synchronousLock = false;
                     });
                 }
             });
-
             while(synchronousLock){
                 setTimeout(function(){},500);
             }
-
             console.log("finished tests for file:" + file);
         });
-
         console.log("finished loading all servers and tests, brewing mocha...");
 
         mocha.run();
