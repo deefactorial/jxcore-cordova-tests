@@ -1,13 +1,13 @@
 console.log("basic test");
 
-var url, request, NODE, uri, should, assert;
+var url, NODE, uri, should, assert;
 
 //check if we are in browser or webview
 if (typeof window == "undefined") {
   console.log("we are not in the browser");
   url = require('url');
 
-  request = require('superagent');
+  var request = require('superagent');
 
   NODE = true;
   uri = 'http://localhost:5000';
@@ -34,6 +34,9 @@ if (typeof cordova == "undefined" && typeof window == "undefined") {
 
 //test if we are using mocha
 if(typeof describe != "undefined") {
+    console.log("run mocha tests!");
+
+    console.log("typeof request:" + typeof request);
 
     describe('request', function () {
 
