@@ -100,19 +100,21 @@
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
             if(!err) {
 
-                var request = require("request");
-                mocha.setup('bdd');
+                require(["request"], function(request) {
+                    mocha.setup('bdd');
 
-                $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
+                    $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
 //                    console.log( data ); // Data returned
 //                    console.log( textStatus ); // Success
 //                    console.log( jqxhr.status ); // 200
-                    console.log( "Load was performed, running mocha tests..." );
+                        console.log( "Load was performed, running mocha tests..." );
 
-                    console.log("typeof request:" + typeof request);
+                        console.log("typeof request:" + typeof request);
 
-                    mocha.run();
+                        mocha.run();
+                    });
                 });
+
             }
         });
     }
