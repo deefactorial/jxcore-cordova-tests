@@ -99,7 +99,7 @@
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
             if(!err) {
 
-                var request = window.Request;
+                var request = window.request;
                 mocha.setup('bdd');
 
                 $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
