@@ -45,6 +45,8 @@ if(typeof describe != "undefined") {
 
         describe('with a callback', function () {
             it('should invoke .end()', function (done) {
+                $.get(uri + '/login', function (data){console.log("data:" + JSON.stringifY(data))});
+
                 request
                     .get(uri + '/login', function (err, res) {
                         console.log("result" + JSON.stringify([err,res]));
