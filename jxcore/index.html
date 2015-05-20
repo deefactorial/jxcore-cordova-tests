@@ -17,8 +17,8 @@
     <script type="text/javascript" charset="utf-8" src="./node_modules/mocha/mocha.js"></script>
     <script type="text/javascript" charset="utf-8" src="./node_modules/chai/chai.js"></script>
     <script type="text/javascript" charset="utf-8" src="./node_modules/should/should.js"></script>
-
-    <script type="text/javascript" charset="utf-8" src="./clientscripts/superagent.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./dist/superagent.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./dist/bundle.js"></script>
 
 </head>
 <body>
@@ -115,7 +115,6 @@
         // calling a method from JXcore (app.js)
 
         window.request = window.superagent;
-        window.assert =
 
         jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
