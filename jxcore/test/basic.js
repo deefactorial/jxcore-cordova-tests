@@ -35,6 +35,7 @@ if(typeof cordova == "undefined") {
 
   console.log("we are not in cordova");
 
+    //test if we are using mocha
     if(typeof describe != "undefined") {
 
         describe('request', function () {

@@ -98,16 +98,16 @@
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
             if(!err) {
 
-//                mocha.setup('bdd');
-//
-//                $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
-//                    console.log( data ); // Data returned
-//                    console.log( textStatus ); // Success
-//                    console.log( jqxhr.status ); // 200
-//                    console.log( "Load was performed." );
-//
-//                    mocha.run();
-//                });
+                mocha.setup('bdd');
+
+                $.getScript( "test/basic.js", function( data, textStatus, jqxhr ) {
+                    console.log( data ); // Data returned
+                    console.log( textStatus ); // Success
+                    console.log( jqxhr.status ); // 200
+                    console.log( "Load was performed." );
+
+                    mocha.run();
+                });
             }
         });
     }
