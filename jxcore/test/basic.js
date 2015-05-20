@@ -36,8 +36,6 @@ if (typeof cordova === "undefined" && typeof window === "undefined") {
 if(typeof describe !== "undefined") {
     console.log("run mocha tests!");
 
-    //console.log("typeof request:" + typeof request);
-
     describe('request', function () {
 
         describe('with a callback', function () {

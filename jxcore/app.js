@@ -30,6 +30,8 @@ cordova('asyncSeverStarted').registerAsync(function(message, callback){
 
     } else {
 
+        console.log("require('" + message + "')");
+
         var app = require(message);
 
         callback("Pong:" + message);
