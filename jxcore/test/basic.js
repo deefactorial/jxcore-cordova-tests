@@ -44,7 +44,7 @@ if(typeof describe !== "undefined") {
 
                 request
                     .get(uri + '/login', function (err, res) {
-                        console.log("result" + JSON.stringify([err,res]));
+                        //console.log("result" + JSON.stringify([err,res]));
                         assert(res.status == 200);
                         done();
                     })
@@ -322,5 +322,7 @@ if(typeof describe !== "undefined") {
             })
         })
     })
+
+    console.log("complete tests for ./test/basic.js");
 
 }

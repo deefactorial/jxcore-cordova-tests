@@ -24,7 +24,7 @@ if (typeof cordova === "undefined" && typeof window === "undefined") {
 
 //test if we are using mocha
 if(typeof describe !== "undefined") {
-  console.log("run mocha tests!");
+  console.log("run mocha tests for test/node/basic.js!");
 
   describe('[node] request', function () {
 
