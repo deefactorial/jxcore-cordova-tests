@@ -61,6 +61,7 @@ if(typeof describe !== "undefined") {
             .post('http://localhost:5000/echo')
             .send({foo: 'baz'})
             .end(function (err, res) {
+              if(err){console.log("error" + JSON.stringify([err,res]))}
               var obj = res.request.toJSON();
               assert('POST' == obj.method);
               assert('http://localhost:5000/echo' == obj.url);
