@@ -114,7 +114,7 @@
 
         // calling a method from JXcore (app.js)
 
-        var request = window.superagent;
+        window.request = window.superagent;
 
         jxcore('asyncSeverStarted').call('Hello basic', function(response, err){
             console.log("asyncServerCallback:" + JSON.stringify([response,err]));
