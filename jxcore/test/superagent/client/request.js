@@ -5,7 +5,7 @@ if (typeof window === "undefined") {
 
 if (typeof it !== 'undefined'){
 
-    var uri = "http:///localhost:5000";
+  var uri = "http:///localhost:5000";
 
   it('Request inheritance', function () {
     assert(request.get(uri + '/') instanceof request.Request);
