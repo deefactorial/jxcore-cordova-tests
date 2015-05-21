@@ -14,7 +14,6 @@ if (typeof window === "undefined") {
 
     process.env.ZUUL_PORT = 5000;
     require('./support/server.js');
-    uri = 'http://localhost:5000';
 
 } else {
     //we are in webview or browser

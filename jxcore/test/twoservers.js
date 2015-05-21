@@ -1,5 +1,5 @@
-var uri = "http://localhost:5002";
-var uri2 = "http://localhost:5003";
+var serveruri = "http://localhost:5002";
+var serveruri2 = "http://localhost:5003";
 
 if(typeof window === 'undefined') {
 
@@ -38,7 +38,7 @@ if(typeof window === 'undefined') {
 
 if(typeof describe !== 'undefined') {
     it('request() Server1 simple GET', function (next) {
-        request('GET', uri + '/ok').end(function (err, res) {
+        request('GET', serveruri + '/ok').end(function (err, res) {
             console.log("result" + JSON.stringify([err,res]));
             assert(res instanceof request.Response, 'respond with Response');
             assert(res.ok, 'response should be ok');
@@ -48,7 +48,7 @@ if(typeof describe !== 'undefined') {
     });
 
     it('request() Server2 simple GET', function (next) {
-        request('GET', uri2 + '/ok').end(function (err, res) {
+        request('GET', serveruri2 + '/ok').end(function (err, res) {
             console.log("result" + JSON.stringify([err,res]));
             assert(res instanceof request.Response, 'respond with Response');
             assert(res.ok, 'response should be ok');
