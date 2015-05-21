@@ -1,6 +1,6 @@
-if(typeof window !== 'undefined') {
+if(typeof window === 'undefined') {
   var assert = require('assert');
-  var request = require('../../');
+  var request = require('superagent');
 }
 
 if(typeof describe !== 'undefined') {
