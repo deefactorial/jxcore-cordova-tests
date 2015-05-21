@@ -6,7 +6,7 @@ if(typeof window === 'undefined') {
 
     var n = 0;
     app.all('/*', function(req, res, next){
-        if (n++) {
+        if (n++ > 1) {
             res.status(404) // HTTP status 404: NotFound
                 .send('Not found');
         }
@@ -16,8 +16,6 @@ if(typeof window === 'undefined') {
   app.all('/tobi', function(req, res){
     res.end(req.method);
   });
-
-
 
   var server = app.listen(5001, function () {
 
