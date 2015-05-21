@@ -36,6 +36,7 @@ if (typeof it !== 'undefined'){
   });
 
     /*
+    Cordova android is missing the res.error.message in the response.
     var array = [{"original":null,"response":{"req":{"_query":[],"method":"GET","url":"http:///localhost:5000/error","header":{},"_header":{},"_callbacks":{"end":[null]},"xhr":{"onerror":null,"onabort":null,"statusText":"Internal Server Error","withCredentials":false,"response":"boom","onloadstart":null,"responseXML":null,"readyState":4,"responseText":"boom","responseType":"","onprogress":null,"onload":null,"upload":{"onabort":null,"onerror":null,"onload":null,"onloadstart":null,"onprogress":null},"status":500},"_timeout":0},"xhr":{"onerror":null,"onabort":null,"statusText":"Internal Server Error","withCredentials":false,"response":"boom","onloadstart":null,"responseXML":null,"readyState":4,"responseText":"boom","responseType":"","onprogress":null,"onload":null,"upload":{"onabort":null,"onerror":null,"onload":null,"onloadstart":null,"onprogress":null},"status":500},"text":"boom","statusText":"Internal Server Error","status":500,"statusType":5,"info":false,"ok":false,"clientError":false,"serverError":true,"error":{"status":500,"method":"GET","url":"http:///localhost:5000/error"},"accepted":false,"noContent":false,"badRequest":false,"unauthorized":false,"notAcceptable":false,"notFound":false,"forbidden":false,"headers":{"date":"Thu, 21 May 2015 17:07:51 GMT","x-powered-by":"Express","connection":"keep-alive","content-length":"4","etag":"W/\"4-22860604\"","content-type":"text/html; charset=utf-8","cache-control":"no-cache, no-store"},"header":{"date":"Thu, 21 May 2015 17:07:51 GMT","x-powered-by":"Express","connection":"keep-alive","content-length":"4","etag":"W/\"4-22860604\"","content-type":"text/html; charset=utf-8","cache-control":"no-cache, no-store"},"type":"text/html","charset":"utf-8","body":null},"status":500},
                  {"req":{"_query":[],"method":"GET","url":"http:///localhost:5000/error","header":{},"_header":{},"_callbacks":{"end":[null]},"xhr":{"onerror":null,"onabort":null,"statusText":"Internal Server Error","withCredentials":false,"response":"boom","onloadstart":null,"responseXML":null,"readyState":4,"responseText":"boom","responseType":"","onprogress":null,"onload":null,"upload":{"onabort":null,"onerror":null,"onload":null,"onloadstart":null,"onprogress":null},"status":500},"_timeout":0},
                      "xhr":{"onerror":null,"onabort":null,"statusText":"Internal Server Error","withCredentials":false,"response":"boom","onloadstart":null,"responseXML":null,"readyState":4,"responseText":"boom","responseType":"","onprogress":null,"onload":null,"upload":{"onabort":null,"onerror":null,"onload":null,"onloadstart":null,"onprogress":null},"status":500},
@@ -60,10 +61,9 @@ if (typeof it !== 'undefined'){
                      "forbidden":false,
                      "headers":{"date":"Thu, 21 May 2015 17:07:51 GMT","x-powered-by":"Express","connection":"keep-alive","content-length":"4","etag":"W/\"4-22860604\"","content-type":"text/html; charset=utf-8","cache-control":"no-cache, no-store"},"header":{"date":"Thu, 21 May 2015 17:07:51 GMT","x-powered-by":"Express","connection":"keep-alive","content-length":"4","etag":"W/\"4-22860604\"","content-type":"text/html; charset=utf-8","cache-control":"no-cache, no-store"},"type":"text/html","charset":"utf-8","body":null}]
     */
-
-        it('request() error object', function (next) {
+  it('request() error object', function (next) {
     request('GET',uri + '/error').end(function (err, res) {
-        console.log("error result:" + JSON.stringify([err,res]));
+        //console.log("error result:" + JSON.stringify([err,res]));
       assert(err);
       assert(res.error, 'response should be an error');
       //assert(res.error.message == 'cannot GET /error (500)');

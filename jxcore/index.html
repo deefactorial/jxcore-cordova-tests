@@ -94,8 +94,8 @@
         console.log("typeof describe:" + typeof describe);
 
 
-        //var testfiles = ["./test/basic.js"];
-        var testfiles = ["./test/superagent/basic.js","./test/superagent/client/request.js"];
+        //superagent tests
+        var testfiles = ["./test/superagent/basic.js","./test/superagent/client/request.js","./test/superagent/client/serialize.js","./test/superagent/client/xdomain.js"];
 
         async.eachSeries(testfiles,
                 function(file, callback) {
