@@ -7,7 +7,6 @@ This is a test repo for the jxcore cordova project located here:
 ```sh
 cordova create jxcore-cordova-tests-project android.jxcore.jxcorecordova.jxcorecordovatests jxcore-cordova-tests
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
-vi config.xml
 ```
 add this line in `config.xml` after the plugin `cordova-plugin-whitelist` not recommened for production systems
 
@@ -23,18 +22,20 @@ git clone https://github.com/deefactorial/jxcore-cordova-tests.git www
 cd www/jxcore
 npm install --production
 cordova platform add android
-cordova run android
+cordova run
 ```
 
 developing tests
 ```bash
 cd www/jxcore
 npm install
+mocha ./test/superagent/basic.js
 grunt server
-google-chrome http://localhost:3030
+google-chrome http://localhost:5000
 ```
 
-make changes to `www/jxcore/index.js`
+add tests to the test folder
+add the test file to `www/jxcore/index.html`
 
 ```sh
 cordova run android
@@ -48,3 +49,4 @@ http://stackoverflow.com/questions/30048429/cordova-does-not-actually-install-ap
 #Contributions
 
 Tests from the [superagent](https://github.com/visionmedia/superagent) project have been incorporated into this project.
+Tests from the [express](https://github.com/strongloop/express) project have been incorporated into this project.
