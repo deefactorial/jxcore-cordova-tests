@@ -633,7 +633,7 @@ if (typeof it !== 'undefined'){
     request
         .get(uri + '/foo')
         .on('request', function (req) {
-          assert('/foo' == req.url);
+          assert(uri +'/foo' == req.url);
           next();
         })
         .end();
