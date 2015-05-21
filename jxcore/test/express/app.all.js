@@ -27,19 +27,16 @@ if(typeof describe !== 'undefined') {
   var uri = "http://localhost:5001";
   describe('app.all()', function () {
     it('should add a router per method', function (done) {
-      request()
-          .put(uri + '/tobi')
+      request('PUT',uri + '/tobi')
           .end(function (err, res) {
               console.log("result of put:" + JSON.stringify([err,res]));
               assert(res.ok, 'response should be ok');
-              request()
-                  .get(uri + "/tobi")
+              request('GET',uri + "/tobi")
                   .end(function (err, res) {
                       console.log("result of get:" + JSON.stringify([err,res]));
                       assert(res.ok, 'response should be ok');
                       done();
                   });
-
           });
     });
 
