@@ -33,7 +33,7 @@ if(typeof describe !== 'undefined') {
       request('PUT',appalluri + '/tobi')
           .end(function (err, res) {
               assert(res.ok, 'response should be ok');
-              request('GET',uri + "/tobi")
+              request('GET',appalluri + "/tobi")
                   .end(function (err, res) {
                       assert(res.ok, 'response should be ok');
                       done();
