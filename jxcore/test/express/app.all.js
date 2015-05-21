@@ -4,18 +4,20 @@ if(typeof window === 'undefined') {
       , assert = require('assert');
   var app = express();
 
+    var n = 0;
+    app.all('/*', function(req, res, next){
+        if (n++) {
+            res.status(404) // HTTP status 404: NotFound
+                .send('Not found');
+        }
+        next();
+    });
+
   app.all('/tobi', function(req, res){
     res.end(req.method);
   });
 
-  var n = 0;
-  app.all('/*', function(req, res, next){
-    if (n++) {
-        res.status(404) // HTTP status 404: NotFound
-        .send('Not found');
-    }
-    next();
-  });
+
 
   var server = app.listen(5001, function () {
 
