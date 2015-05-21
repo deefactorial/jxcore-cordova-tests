@@ -37,12 +37,13 @@ if (typeof it !== 'undefined'){
 
   it('request() error object', function (next) {
     request('GET',uri + '/error').end(function (err, res) {
+        console.log("error result:" + JSON.stringify([err,res]));
       assert(err);
       assert(res.error, 'response should be an error');
       assert(res.error.message == 'cannot GET /error (500)');
       assert(res.error.status == 500);
       assert(res.error.method == 'GET');
-      assert(res.error.url == '/error');
+      assert(res.error.url == uri + '/error');
       next();
     });
   });
