@@ -29,21 +29,19 @@ if(typeof describe !== 'undefined') {
     it('should add a router per method', function (done) {
       request('PUT',uri + '/tobi')
           .end(function (err, res) {
-              console.log("result of put:" + JSON.stringify([err,res]));
               assert(res.ok, 'response should be ok');
               request('GET',uri + "/tobi")
                   .end(function (err, res) {
-                      console.log("result of get:" + JSON.stringify([err,res]));
                       assert(res.ok, 'response should be ok');
                       done();
                   });
           });
     });
 
-    //it('should run the callback for a method just once', function (done) {
-    //  request()
-    //      .del(uri + '/tobi')
-    //      .expect(404, done);
-    //})
+    it('should run the callback for a method just once', function (done) {
+      request('DELETE',uri + '/tobi').end(function(err,res){
+          assert(res.status == 404, "response should be 404 Not Found");
+      });
+    });
   });
 }
