@@ -6,18 +6,18 @@ if(typeof window === 'undefined') {
 if(typeof describe !== 'undefined') {
   describe('xdomain', function () {
 
-    // TODO (defunctzombie) I am not certain this actually forces xdomain request
-    // use localtunnel.me and tunnel127.com alias instead
-    it('should support req.withCredentials()', function (next) {
-      request
-          .get('//' + window.location.host + '/xdomain')
-          .withCredentials()
-          .end(function (err, res) {
-            assert(200 == res.status);
-            assert('tobi' == res.text);
-            next();
-          });
-    });
+    //// TODO (defunctzombie) I am not certain this actually forces xdomain request
+    //// use localtunnel.me and tunnel127.com alias instead
+    //it('should support req.withCredentials()', function (next) {
+    //  request
+    //      .get('//' + window.location.host + '/xdomain')
+    //      .withCredentials()
+    //      .end(function (err, res) {
+    //        assert(200 == res.status);
+    //        assert('tobi' == res.text);
+    //        next();
+    //      });
+    //});
 
     // xdomain not supported in old IE and IE11 gives weird Jetty errors (looks like a SauceLabs issue)
     var isIE11 = !!navigator.userAgent.match(/Trident.*rv[ :]*11\./);
