@@ -40,6 +40,7 @@ if(typeof describe !== 'undefined') {
 
     it('should run the callback for a method just once', function (done) {
       request('DELETE',uri + '/tobi').end(function(err,res){
+          console.log("delete response" + JSON.stringify([err,res]));
           assert(res.status == 404, "response should be 404 Not Found");
       });
     });
