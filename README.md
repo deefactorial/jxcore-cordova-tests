@@ -9,10 +9,10 @@ cordova create jxcore-cordova-tests-project android.jxcore.jxcorecordova.jxcorec
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 vi config.xml
 ```
-add this line in `config.xml` after the plugin `cordova-plugin-whitelist`
+add this line in `config.xml` after the plugin `cordova-plugin-whitelist` not recommened for production systems
 
 ```xml
-<allow-navigation href="http://localhost:3030/*" />
+<allow-navigation href="*" />
 ```
 
 running android tests
