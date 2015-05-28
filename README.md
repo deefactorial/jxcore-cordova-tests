@@ -6,6 +6,7 @@ This is a test repo for the jxcore cordova project located here:
 
 ```sh
 cordova create jxcore-cordova-tests org.jxcore.jxcorecordova.jxcorecordovatests jxcore-cordova-tests
+cd jxcore-cordova-tests
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 ```
 add this line in `config.xml` after the plugin `cordova-plugin-whitelist` not recommened for production systems
@@ -15,28 +16,23 @@ add this line in `config.xml` after the plugin `cordova-plugin-whitelist` not re
 ```
 
 running android tests
+
 ```sh
 cordova plugin add https://github.com/jxcore/jxcore-cordova.git
 rm -Rf www
 git clone https://github.com/deefactorial/jxcore-cordova-tests.git www
 cd www/jxcore
-npm install --production
+npm install
 cordova platform add android
 cordova run
 ```
 
-developing tests
+run tests on native node
+
 ```bash
 cd www/jxcore
 npm install
 mocha
-```
-
-add tests to the test folder
-add the test file to `www/jxcore/index.html`
-
-```sh
-cordova run
 ```
 
 #Notes
