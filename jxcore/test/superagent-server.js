@@ -180,6 +180,8 @@ app.get('/arraybuffer', function(req, res) {
   res.send(content);
 });
 
+console.log("listen on port:" + process.env.ZUUL_PORT);
+
 var server = app.listen(process.env.ZUUL_PORT, function () {
 
   var host = server.address().address;
