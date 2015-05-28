@@ -47,5 +47,3 @@ http://stackoverflow.com/questions/30048429/cordova-does-not-actually-install-ap
 #Contributions
 
 Tests from the [superagent](https://github.com/visionmedia/superagent) project have been incorporated into this project.
-
-Tests from the [express](https://github.com/strongloop/express) project have been incorporated into this project.
