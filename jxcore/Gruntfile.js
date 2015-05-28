@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         nodemon: {
             dev: {
-                script: 'test/basic.js',
+                script: 'test/superagent-shared.js',
                 options: {
                     args: ['dev'],
                     nodeArgs: ['--debug'],

@@ -1,11 +1,11 @@
-console.log("basic test");
+console.log("Superagent shared test");
 
-var url, NODE, uri, should, assert;
+var NODE, uri, should, assert;
 
 //check if we are not in browser or webview
 if (typeof window === "undefined") {
     console.log("we are not in the browser");
-    url = require('url'); //is this necessary ?
+    //url = require('url'); //is this necessary ?
 
     var request = require('superagent');
 
@@ -322,6 +322,6 @@ if(typeof describe !== "undefined") {
         })
     })
 
-    console.log("complete tests for ./test/basic.js");
+    console.log("complete tests for ./test/superagent-shared.js");
 
 }
