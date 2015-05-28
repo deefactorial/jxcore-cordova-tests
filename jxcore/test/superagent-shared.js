@@ -13,7 +13,7 @@ if (typeof window === "undefined") {
     uri = 'http://localhost:5000';
 
     process.env.ZUUL_PORT = 5000;
-    require('./support/server.js');
+    require('./superagent-server.js');
 
 } else {
     //we are in webview or browser

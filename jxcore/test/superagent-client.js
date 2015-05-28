@@ -2,7 +2,7 @@ if (typeof window === "undefined") {
 
   var assert = require('assert');
   var request = require('superagent');
-    
+
 } else {
 
     //Only run in the browser.
