@@ -691,4 +691,67 @@ if (typeof it !== 'undefined'){
     });
   }
 
+    /*
+    Serialize tests
+     */
+    describe('request.serializeObject()', function () {
+        it('should serialize', function () {
+            serialize('test', 'test');
+            serialize('foo=bar', 'foo=bar');
+            serialize({foo: 'bar'}, 'foo=bar');
+            serialize({foo: null}, '');
+            serialize({foo: 'null'}, 'foo=null');
+            serialize({foo: undefined}, '');
+            serialize({foo: 'undefined'}, 'foo=undefined');
+            serialize({name: 'tj', age: 24}, 'name=tj&age=24');
+            serialize({name: '&tj&'}, 'name=%26tj%26');
+            serialize({'&name&': 'tj'}, '%26name%26=tj');
+        });
+    });
+
+    describe('request.parseString()', function () {
+        it('should parse', function () {
+            parse('name=tj', {name: 'tj'});
+            parse('name=Manny&species=cat', {name: 'Manny', species: 'cat'});
+            parse('redirect=/&ok', {redirect: '/', ok: 'undefined'});
+            parse('%26name=tj', {'&name': 'tj'});
+            parse('name=tj%26', {name: 'tj&'});
+        });
+    });
+
+
+    /*
+    xdomain tests
+     */
+
+    describe('xdomain', function () {
+
+        //// TODO (defunctzombie) I am not certain this actually forces xdomain request
+        //// use localtunnel.me and tunnel127.com alias instead
+        //it('should support req.withCredentials()', function (next) {
+        //  request
+        //      .get('//' + window.location.host + '/xdomain')
+        //      .withCredentials()
+        //      .end(function (err, res) {
+        //        assert(200 == res.status);
+        //        assert('tobi' == res.text);
+        //        next();
+        //      });
+        //});
+
+        // xdomain not supported in old IE and IE11 gives weird Jetty errors (looks like a SauceLabs issue)
+        var isIE11 = !!navigator.userAgent.match(/Trident.*rv[ :]*11\./);
+        var isIE9OrOlder = !window.atob;
+        if (!isIE9OrOlder && !isIE11) { // Don't run on IE9 or older, or IE11
+            it('should handle x-domain failure', function (next) {
+                request
+                    .get('//tunne127.com')
+                    .end(function (err, res) {
+                        assert(err, 'error missing');
+                        assert(err.crossDomain, 'not .crossDomain');
+                        next();
+                    });
+            });
+        }
+    });
 }

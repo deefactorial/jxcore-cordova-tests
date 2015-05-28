@@ -3,8 +3,6 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var app = express();
 
-//console.log("start test server");
-
 app.use(function(req, res, next) {
   res.set('Cache-Control', 'no-cache, no-store');
   next();
@@ -182,10 +180,6 @@ app.get('/arraybuffer', function(req, res) {
   res.send(content);
 });
 
-//app.use(express.static('../../public'));
-
-//console.log("listen on port:" + process.env.ZUUL_PORT);
-
 var server = app.listen(process.env.ZUUL_PORT, function () {
 
   var host = server.address().address;
@@ -194,5 +188,3 @@ var server = app.listen(process.env.ZUUL_PORT, function () {
   console.log('Example app listening at http://%s:%s', host, port);
 
 });
-
-//app.listen(process.env.ZUUL_PORT);
