@@ -100,7 +100,7 @@
             "./test/superagent-client.js"
                 ];
 
-        async.eachSeries(testfiles,
+        async.each(testfiles,
                 function(file, callback) {
                     console.log("Loading tests for file:" + file);
                     jxcore('asyncSeverStarted').call(file, function(response, err){
