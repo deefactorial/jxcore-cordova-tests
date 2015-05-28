@@ -180,7 +180,9 @@ app.get('/arraybuffer', function(req, res) {
   res.send(content);
 });
 
-console.log("listen on port:" + process.env.ZUUL_PORT);
+if(typeof process.env.ZUUL_PORT === 'undefined'){
+  process.env.ZUUL_PORT = 5000;
+}
 
 var server = app.listen(process.env.ZUUL_PORT, function () {
 
