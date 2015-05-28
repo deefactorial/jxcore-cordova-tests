@@ -5,7 +5,7 @@ This is a test repo for the jxcore cordova project located here:
 [jxcore-cordova](https://github.com/jxcore/jxcore-cordova.git)
 
 ```sh
-cordova create jxcore-cordova-tests-project android.jxcore.jxcorecordova.jxcorecordovatests jxcore-cordova-tests
+cordova create jxcore-cordova-tests org.jxcore.jxcorecordova.jxcorecordovatests jxcore-cordova-tests
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 ```
 add this line in `config.xml` after the plugin `cordova-plugin-whitelist` not recommened for production systems
