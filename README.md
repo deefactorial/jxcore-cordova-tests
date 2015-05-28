@@ -29,16 +29,14 @@ developing tests
 ```bash
 cd www/jxcore
 npm install
-mocha ./test/superagent/basic.js
-grunt server
-google-chrome http://localhost:5000
+mocha
 ```
 
 add tests to the test folder
 add the test file to `www/jxcore/index.html`
 
 ```sh
-cordova run android
+cordova run
 ```
 
 #Notes
