@@ -16,7 +16,7 @@ if (typeof window === "undefined") {
 }
 
 //desktop
-if (typeof cordova === "undefined" && typeof window === "undefined") {
+if (typeof Mobile === "undefined" && typeof window === "undefined") {
   console.log("we are in the desktop");
   var assert = require('better-assert')
       , should = require('should');
