@@ -1,24 +1,25 @@
-# jxcore-cordova-tests
-tests for jxcore-cordova
-
-This is a test repo for the jxcore cordova project located here:
-[jxcore-cordova](https://github.com/jxcore/jxcore-cordova.git)
+### JXcore Cordova - Node API tests
 
 ```sh
 cordova create jxcore-cordova-tests org.jxcore.jxcorecordova.jxcorecordovatests jxcore-cordova-tests
 cd jxcore-cordova-tests
 cordova plugin add https://github.com/apache/cordova-plugin-whitelist.git --save
 ```
-add this line in `config.xml` after the plugin `cordova-plugin-whitelist` not recommened for production systems
+
+add the line below in `config.xml` after the plugin `cordova-plugin-whitelist` not recommened for production systems
 
 ```xml
 <allow-navigation href="*" />
 ```
 
-running android tests
+get jxcore-cordova
+```
+git clone https://github.com/jxcore/jxcore-cordova
+```
 
+running android tests
 ```sh
-cordova plugin add https://github.com/jxcore/jxcore-cordova.git
+cordova plugin add jxcore-cordova
 rm -Rf www
 git clone https://github.com/deefactorial/jxcore-cordova-tests.git www
 cd www/jxcore
